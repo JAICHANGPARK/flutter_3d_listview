@@ -39,7 +39,9 @@ class MyHome extends StatelessWidget {
         child: ListWheelScrollView(
           children: listofImages
               .map((m) => Card(
-                      child: Stack(
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20)),
+                  child: Stack(
                     fit: StackFit.expand,
                     alignment: Alignment.center,
                     children: <Widget>[
@@ -48,6 +50,18 @@ class MyHome extends StatelessWidget {
                         alignment: Alignment.center,
                         filterQuality: FilterQuality.low,
                         fit: BoxFit.cover,
+                      ),
+                      Positioned(
+                        bottom: 40.0,
+                        left: 30.0,
+                        child: Text(
+                          "Image",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 50.0,
+                            fontWeight: FontWeight.bold
+                          ),
+                        ),
                       ),
                     ],
                   )))
