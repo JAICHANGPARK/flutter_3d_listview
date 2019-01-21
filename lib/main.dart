@@ -10,7 +10,6 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-
         primarySwatch: Colors.blue,
       ),
       home: MyHome(),
@@ -19,7 +18,6 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHome extends StatelessWidget {
-
   final listofImages = [
     "https://images.unsplash.com/photo-1547157283-087711e7858f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
     "https://images.unsplash.com/photo-1547152850-11ac68bbe48f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
@@ -37,18 +35,19 @@ class MyHome extends StatelessWidget {
         title: Text("3D List View"),
         centerTitle: true,
       ),
-
-      body: Center(),
+      body: Center(
+        child: ListWheelScrollView(
+            itemExtent: 50.0,
+            children: List.generate(20, (i) => i)
+                .map((m) => Text(m.toString()))
+                .toList()),
+      ),
     );
   }
 }
 
-
-
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
-
-
 
   final String title;
 
