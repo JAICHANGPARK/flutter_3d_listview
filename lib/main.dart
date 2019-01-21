@@ -37,10 +37,27 @@ class MyHome extends StatelessWidget {
       ),
       body: Center(
         child: ListWheelScrollView(
-            itemExtent: 50.0,
-            children: List.generate(20, (i) => i)
-                .map((m) => Text(m.toString()))
-                .toList()),
+          children: listofImages
+              .map((m) => Stack(
+                    fit: StackFit.expand,
+                    alignment: Alignment.center,
+                    children: <Widget>[
+                      Image.network(
+                        m,
+                        alignment: Alignment.center,
+                        filterQuality: FilterQuality.low,
+                        fit: BoxFit.cover,
+                      ),
+                    ],
+                  ))
+              .toList(),
+          useMagnifier: true,
+          magnification: 2,
+          itemExtent: MediaQuery.of(context).size.height * 0.8,
+//            children: List.generate(20, (i) => i)
+//                .map((m) => Text(m.toString()))
+//                .toList()
+        ),
       ),
     );
   }
