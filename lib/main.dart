@@ -38,7 +38,8 @@ class MyHome extends StatelessWidget {
       body: Center(
         child: ListWheelScrollView(
           children: listofImages
-              .map((m) => Stack(
+              .map((m) => Card(
+                      child: Stack(
                     fit: StackFit.expand,
                     alignment: Alignment.center,
                     children: <Widget>[
@@ -49,7 +50,7 @@ class MyHome extends StatelessWidget {
                         fit: BoxFit.cover,
                       ),
                     ],
-                  ))
+                  )))
               .toList(),
           useMagnifier: true,
           magnification: 2,
