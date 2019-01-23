@@ -37,6 +37,8 @@ class MyHome extends StatelessWidget {
       ),
       body: Center(
         child: ListWheelScrollView(
+          perspective: 0.003,
+          diameterRatio: 2,
           children: listofImages
               .map((m) => Card(
                   shape: RoundedRectangleBorder(
